@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Miranda Newton and Ethan Matmani are getting married June 12, 2027 at Twisted Ranch in Bertram, Texas.">
+<title>Miranda &amp; Ethan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant:ital,wght@0,500;1,400;1,500&family=Mulish:wght@400;600&display=swap">
+<style>
+/* Layout: a full-width mauve hero framed by summer florals, a blush-tinted invitation column with floral sprigs between sections, and a mauve RSVP band and footer */
+:root {
+  --bg: #f8f0f4;
+  --paper: #ffffff;
+  --ink: #3b3239;
+  --muted: #74686f;
+  --mauve: #8e5873;
+  --mauve-deep: #6c3f56;
+  --blush: #efdbe4;
+  --line: #e2cdd7;
+  --hero-a: #9b6380;
+  --hero-b: #74455d;
+  --on-mauve: #fdf5f8;
+  --on-mauve-soft: rgba(253, 245, 248, .78);
+  --petal-1: #b97c98;
+  --petal-2: #dcaabf;
+  --petal-3: #f6e2ea;
+  --leaf: #8d9b89;
+  --leaf-dark: #6d7d6b;
+  --gold: #e4bb5e;
+  --display: "Italiana", "Didot", "Bodoni 72", Georgia, serif;
+  --serif: "Cormorant", "Cormorant Garamond", Georgia, serif;
+  --sans: "Mulish", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #211a1e; --paper: #2d2328; --ink: #f1e7ec; --muted: #b5a6ae;
+    --mauve: #dca7c0; --mauve-deep: #e9bfd2; --blush: #3d2e36; --line: #4b3a43;
+    --hero-a: #7a4862; --hero-b: #4f2e40;
+    --petal-1: #c88aa6; --petal-2: #e2b3c7; --petal-3: #f3dde6; --leaf: #91a08d; --leaf-dark: #74856f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #211a1e; --paper: #2d2328; --ink: #f1e7ec; --muted: #b5a6ae;
+  --mauve: #dca7c0; --mauve-deep: #e9bfd2; --blush: #3d2e36; --line: #4b3a43;
+  --hero-a: #7a4862; --hero-b: #4f2e40;
+  --petal-1: #c88aa6; --petal-2: #e2b3c7; --petal-3: #f3dde6; --leaf: #91a08d; --leaf-dark: #74856f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+img { max-width: 100%; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+.gutter {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+p { max-width: 58ch; margin: 0; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+.eyebrow { font-size: 12px; letter-spacing: .28em; padding-left: .28em; text-transform: uppercase; color: var(--mauve); font-weight: 600; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; overflow: hidden; color: var(--on-mauve); text-align: center;
+  background: radial-gradient(120% 90% at 50% 0%, var(--hero-a), var(--hero-b));
+}
+.hero .eyebrow { color: var(--on-mauve-soft); }
+.garland { position: absolute; width: clamp(150px, 34vw, 330px); height: auto; pointer-events: none; }
+.garland.tl { top: -6px; left: -6px; }
+.garland.br { bottom: -6px; right: -6px; transform: scale(-1, -1); }
+.garland.tr { top: -6px; right: -6px; transform: scaleX(-1); width: clamp(110px, 22vw, 220px); }
+.garland.bl { bottom: -6px; left: -6px; transform: scaleY(-1); width: clamp(110px, 22vw, 220px); }
+.hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; padding-block: 22px 72px; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; }
+nav a { color: var(--on-mauve-soft); text-decoration: none; }
+nav a:hover, nav a:focus-visible { color: var(--on-mauve); }
+.hero header { display: flex; flex-direction: column; align-items: center; padding-top: 72px; }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(3.2rem, 12vw, 6rem); line-height: 1; margin: 22px 0 14px; text-wrap: balance; }
+h1 .amp { display: block; font-family: var(--serif); font-style: italic; color: var(--petal-3); font-size: .5em; margin: 10px 0; }
+.full { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--on-mauve-soft); }
+.date { display: inline-flex; align-items: center; gap: 18px; margin-top: 28px; font-family: var(--serif); font-size: 1.45rem; letter-spacing: .06em; }
+.date .rule { width: 44px; height: 1px; background: var(--on-mauve-soft); }
+.count { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; max-width: 440px; margin-top: 36px; }
+.count div { border-top: 1px solid rgba(253, 245, 248, .4); padding-top: 12px; }
+.count b { display: block; font-family: var(--display); font-weight: 400; font-size: 2.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.count small { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--on-mauve-soft); }
+
+/* ---------- Sections ---------- */
+section { display: flex; flex-direction: column; align-items: center; gap: 20px; padding-block: 48px; text-align: center; }
+.heading { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 2.5rem; line-height: 1.15; margin: 0; color: var(--mauve-deep); text-wrap: balance; }
+.note { color: var(--muted); font-style: italic; font-family: var(--serif); font-size: 1.15rem; }
+.sprig { display: block; width: 200px; height: auto; margin: 8px auto 0; }
+
+.cards { align-self: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-block: 8px; }
+.card { display: flex; flex-direction: column; align-items: center; gap: 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 28px 24px; }
+.card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.55rem; line-height: 1.2; margin: 0; color: var(--mauve-deep); }
+.card .when { font-size: 12px; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; color: var(--mauve); font-weight: 600; margin-bottom: 4px; }
+.card p { color: var(--muted); }
+.directions { margin-top: 8px; font-size: 12px; letter-spacing: .2em; padding: 9px 16px 9px 18px; text-transform: uppercase; font-weight: 600; color: var(--on-mauve); background: var(--mauve); border-radius: 999px; text-decoration: none; }
+.directions:hover { background: var(--hero-b); }
+
+.colors { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 8px; }
+.palette { display: flex; justify-content: center; gap: 10px; }
+.palette i { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--line); }
+
+.faq { width: 100%; max-width: 600px; margin-top: 4px; border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); text-align: left; }
+summary { cursor: pointer; padding: 18px 4px; font-family: var(--serif); font-size: 1.25rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--mauve); font-family: var(--sans); font-size: 1.1rem; }
+details[open] summary::after { content: "\2212"; }
+summary:focus-visible { outline: 2px solid var(--mauve); outline-offset: 2px; }
+details p { padding: 0 4px 18px; color: var(--muted); }
+
+/* ---------- RSVP band + footer ---------- */
+.band { display: block; padding-block: 0; position: relative; overflow: hidden; text-align: center; color: var(--on-mauve); background: linear-gradient(160deg, var(--hero-a), var(--hero-b)); margin-top: 40px; }
+.band .eyebrow { color: var(--on-mauve-soft); }
+.band-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; padding-block: 64px; }
+.band .big { font-family: var(--display); font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.2; }
+.band .note { color: var(--on-mauve-soft); }
+footer { background: var(--hero-b); color: var(--on-mauve-soft); text-align: center; }
+footer .inner { display: flex; flex-direction: column; align-items: center; gap: 6px; padding-block: 32px 44px; border-top: 1px solid rgba(253, 245, 248, .2); }
+footer .mono { font-family: var(--display); font-size: 2rem; line-height: 1; color: var(--on-mauve); }
+footer p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+
+@media (max-width: 560px) {
+  .cards { grid-template-columns: 1fr; }
+  .count b { font-size: 1.8rem; }
+  .hero header { padding-top: 64px; }
+  .garland { opacity: .8; }
+  h2 { font-size: 2.15rem; }
+}
+</style>
+</head>
+<body>
+<!-- Flower shapes, drawn once and reused -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="leaf">
+      <path d="M0 0 C7 -8 19 -9 28 0 C19 9 7 8 0 0Z" style="fill:var(--leaf)"/>
+      <path d="M2 0 H24" style="stroke:var(--leaf-dark);stroke-width:.8;fill:none"/>
+    </g>
+    <g id="peony">
+      <g style="fill:var(--petal-2)">
+        <circle cx="0" cy="-13" r="11"/><circle cx="11.3" cy="-6.5" r="11"/><circle cx="11.3" cy="6.5" r="11"/>
+        <circle cx="0" cy="13" r="11"/><circle cx="-11.3" cy="6.5" r="11"/><circle cx="-11.3" cy="-6.5" r="11"/>
+      </g>
+      <g style="fill:var(--petal-1)">
+        <circle cx="0" cy="-7" r="8"/><circle cx="6.7" cy="-2.2" r="8"/><circle cx="4.1" cy="5.7" r="8"/>
+        <circle cx="-4.1" cy="5.7" r="8"/><circle cx="-6.7" cy="-2.2" r="8"/>
+      </g>
+      <circle r="6" style="fill:var(--mauve)"/>
+      <circle r="2.6" style="fill:var(--petal-2)"/>
+    </g>
+    <g id="cosmos">
+      <g style="fill:var(--petal-3);stroke:var(--petal-1);stroke-width:.8">
+        <ellipse cy="-13" rx="6.5" ry="12"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(45)"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(90)"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(135)"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(180)"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(225)"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(270)"/>
+        <ellipse cy="-13" rx="6.5" ry="12" transform="rotate(315)"/>
+      </g>
+      <circle r="5" style="fill:var(--gold)"/>
+    </g>
+    <g id="bud">
+      <ellipse cy="-6" rx="4.5" ry="7.5" style="fill:var(--petal-1)"/>
+      <path d="M-5 -1 Q0 4 5 -1 Q2 2 0 2 Q-2 2 -5 -1Z" style="fill:var(--leaf-dark)"/>
+    </g>
+    <g id="sprinkle" style="fill:var(--petal-3)">
+      <circle cx="0" cy="0" r="2.2"/><circle cx="6" cy="-5" r="1.8"/><circle cx="-5" cy="-6" r="1.6"/><circle cx="3" cy="6" r="1.7"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="hero">
+  <!-- corner garland: stems, leaves, then blooms on top -->
+  <svg class="garland tl" viewBox="0 0 300 220" aria-hidden="true">
+    <g id="garland">
+      <path d="M0 26 C60 34 120 22 200 56" style="stroke:var(--leaf-dark);stroke-width:1.6;fill:none"/>
+      <path d="M18 0 C34 60 22 120 54 186" style="stroke:var(--leaf-dark);stroke-width:1.6;fill:none"/>
+      <use href="#leaf" transform="translate(82 30) rotate(-25)"/>
+      <use href="#leaf" transform="translate(96 30) rotate(30)"/>
+      <use href="#leaf" transform="translate(150 38) rotate(-15) scale(.9)"/>
+      <use href="#leaf" transform="translate(160 42) rotate(40) scale(.85)"/>
+      <use href="#leaf" transform="translate(28 84) rotate(110)"/>
+      <use href="#leaf" transform="translate(28 96) rotate(60)"/>
+      <use href="#leaf" transform="translate(34 140) rotate(120) scale(.9)"/>
+      <use href="#leaf" transform="translate(40 150) rotate(50) scale(.85)"/>
+      <use href="#leaf" transform="translate(60 60) rotate(35) scale(1.1)"/>
+      <use href="#cosmos" transform="translate(116 30) scale(1.05)"/>
+      <use href="#cosmos" transform="translate(30 116) scale(.9)"/>
+      <use href="#cosmos" transform="translate(196 56) scale(.7)"/>
+      <use href="#peony" transform="translate(44 42) scale(1.45)"/>
+      <use href="#bud" transform="translate(172 44) rotate(70)"/>
+      <use href="#bud" transform="translate(52 182) rotate(160)"/>
+      <use href="#bud" transform="translate(84 74) rotate(130) scale(.9)"/>
+      <use href="#sprinkle" transform="translate(140 20)"/>
+      <use href="#sprinkle" transform="translate(12 160)"/>
+      <use href="#sprinkle" transform="translate(96 96) scale(.9)"/>
+    </g>
+  </svg>
+  <svg class="garland br" viewBox="0 0 300 220" aria-hidden="true"><use href="#garland"/></svg>
+  <svg class="garland tr" viewBox="0 0 300 220" aria-hidden="true"><use href="#garland"/></svg>
+  <svg class="garland bl" viewBox="0 0 300 220" aria-hidden="true"><use href="#garland"/></svg>
+
+  <div class="hero-inner gutter">
+    <nav aria-label="Sections">
+      <a href="#story">Our Story</a>
+      <a href="#details">The Day</a>
+      <a href="#travel">Travel</a>
+      <a href="#registry">Registry</a>
+      <a href="#faq">FAQ</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+    <header>
+      <div class="eyebrow">Together with their families</div>
+      <h1>Miranda <span class="amp">and</span> Ethan</h1>
+      <p class="full">Miranda Lola Belle Kaye Newton &amp; Ethan Matmani</p>
+      <div class="date"><span class="rule"></span>Saturday, June 12, 2027<span class="rule"></span></div>
+      <div class="count" aria-live="polite">
+        <div><b id="d">231</b><small>Days</small></div>
+        <div><b id="h">00</b><small>Hours</small></div>
+        <div><b id="m">00</b><small>Minutes</small></div>
+        <div><b id="s">00</b><small>Seconds</small></div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<main class="wrap gutter">
+  <section id="story">
+    <div class="heading">
+      <div class="eyebrow">How it began</div>
+      <h2>Our Story</h2>
+    </div>
+    <p>Every love story has a first chapter. Miranda and Ethan will share theirs here soon: how they met, the moment they knew, and the proposal that brought us all to June 12.</p>
+    <p class="note">Story and photos coming soon</p>
+  </section>
+
+  <svg class="sprig" viewBox="0 0 240 40" aria-hidden="true">
+    <path d="M24 22 C70 16 170 16 216 22" style="stroke:var(--leaf-dark);stroke-width:1.2;fill:none"/>
+    <use href="#leaf" transform="translate(84 19) rotate(160) scale(.8)"/>
+    <use href="#leaf" transform="translate(70 19) rotate(-150) scale(.75)"/>
+    <use href="#leaf" transform="translate(156 19) rotate(-20) scale(.8)"/>
+    <use href="#leaf" transform="translate(170 19) rotate(30) scale(.75)"/>
+    <use href="#bud" transform="translate(42 21) rotate(-100) scale(.8)"/>
+    <use href="#bud" transform="translate(198 21) rotate(100) scale(.8)"/>
+    <use href="#cosmos" transform="translate(120 20) scale(.72)"/>
+  </svg>
+
+  <section id="details">
+    <div class="heading">
+      <div class="eyebrow">June 12, 2027</div>
+      <h2>The Day</h2>
+    </div>
+    <p>We can't wait to celebrate with you at Twisted Ranch in Oatmeal, Texas, out in the Hill Country northwest of Austin.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Ceremony</h3>
+        <p class="when">Time to be announced</p>
+        <p>Twisted Ranch<br>7345 W Farm to Market Rd 243<br>Bertram, TX 78605</p>
+        <a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=7345+W+Farm+to+Market+Rd+243+Bertram+TX+78605" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div class="card">
+        <h3>Reception</h3>
+        <p class="when">To follow the ceremony</p>
+        <p>Dinner, dancing, and celebration at Twisted Ranch.</p>
+      </div>
+    </div>
+    <div class="colors">
+      <p class="note">Wedding colors: mauve and gray</p>
+      <div class="palette" aria-hidden="true">
+        <i style="background:#74455d"></i><i style="background:#8e5873"></i><i style="background:#b97c98"></i><i style="background:#dcaabf"></i><i style="background:#8d8a8e"></i><i style="background:#c7c3c6"></i>
+      </div>
+    </div>
+  </section>
+
+  <svg class="sprig" viewBox="0 0 240 40" aria-hidden="true">
+    <path d="M24 22 C70 16 170 16 216 22" style="stroke:var(--leaf-dark);stroke-width:1.2;fill:none"/>
+    <use href="#leaf" transform="translate(84 19) rotate(160) scale(.8)"/>
+    <use href="#leaf" transform="translate(70 19) rotate(-150) scale(.75)"/>
+    <use href="#leaf" transform="translate(156 19) rotate(-20) scale(.8)"/>
+    <use href="#leaf" transform="translate(170 19) rotate(30) scale(.75)"/>
+    <use href="#bud" transform="translate(42 21) rotate(-100) scale(.8)"/>
+    <use href="#bud" transform="translate(198 21) rotate(100) scale(.8)"/>
+    <use href="#peony" transform="translate(120 20) scale(.6)"/>
+  </svg>
+
+  <section id="travel">
+    <div class="heading">
+      <div class="eyebrow">Getting there</div>
+      <h2>Travel &amp; Stay</h2>
+    </div>
+    <p>Twisted Ranch sits in the small community of Oatmeal, Texas. Here's what out-of-town guests need to plan their trip.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Flying In</h3>
+        <p class="when">Austin, Texas</p>
+        <p>Fly into Austin-Bergstrom International Airport (AUS). A rental car is the easiest way to reach the hotels and the ranch.</p>
+      </div>
+      <div class="card">
+        <h3>Where to Stay</h3>
+        <p class="when">Leander &amp; Cedar Park</p>
+        <p>The closest hotels are in Leander and Cedar Park, the nearest towns with a good range of places to stay. Any room blocks will be posted here.</p>
+      </div>
+    </div>
+    <p class="note">Hotel blocks coming soon</p>
+  </section>
+
+  <svg class="sprig" viewBox="0 0 240 40" aria-hidden="true">
+    <path d="M24 22 C70 16 170 16 216 22" style="stroke:var(--leaf-dark);stroke-width:1.2;fill:none"/>
+    <use href="#leaf" transform="translate(84 19) rotate(160) scale(.8)"/>
+    <use href="#leaf" transform="translate(70 19) rotate(-150) scale(.75)"/>
+    <use href="#leaf" transform="translate(156 19) rotate(-20) scale(.8)"/>
+    <use href="#leaf" transform="translate(170 19) rotate(30) scale(.75)"/>
+    <use href="#bud" transform="translate(42 21) rotate(-100) scale(.8)"/>
+    <use href="#bud" transform="translate(198 21) rotate(100) scale(.8)"/>
+    <use href="#cosmos" transform="translate(120 20) scale(.72)"/>
+  </svg>
+
+  <section id="registry">
+    <div class="heading">
+      <div class="eyebrow">With gratitude</div>
+      <h2>Registry</h2>
+    </div>
+    <p>Your presence is the greatest gift. For those who have asked, registry links will be shared here.</p>
+    <p class="note">Coming soon</p>
+  </section>
+
+  <svg class="sprig" viewBox="0 0 240 40" aria-hidden="true">
+    <path d="M24 22 C70 16 170 16 216 22" style="stroke:var(--leaf-dark);stroke-width:1.2;fill:none"/>
+    <use href="#leaf" transform="translate(84 19) rotate(160) scale(.8)"/>
+    <use href="#leaf" transform="translate(70 19) rotate(-150) scale(.75)"/>
+    <use href="#leaf" transform="translate(156 19) rotate(-20) scale(.8)"/>
+    <use href="#leaf" transform="translate(170 19) rotate(30) scale(.75)"/>
+    <use href="#bud" transform="translate(42 21) rotate(-100) scale(.8)"/>
+    <use href="#bud" transform="translate(198 21) rotate(100) scale(.8)"/>
+    <use href="#peony" transform="translate(120 20) scale(.6)"/>
+  </svg>
+
+  <section id="faq">
+    <div class="heading">
+      <div class="eyebrow">Good to know</div>
+      <h2>Questions</h2>
+    </div>
+    <div class="faq">
+      <details><summary>What should I wear?</summary><p>Dress code to be announced. Touches of mauve or gray are always welcome.</p></details>
+      <details><summary>When is the RSVP deadline?</summary><p>RSVP details and a deadline will be shared with formal invitations.</p></details>
+      <details><summary>Can I bring a guest?</summary><p>Please refer to the names on your invitation. We'll note plus-ones there.</p></details>
+      <details><summary>Are children welcome?</summary><p>Details coming soon.</p></details>
+    </div>
+  </section>
+</main>
+
+<section id="rsvp" class="band">
+  <svg class="garland tl" viewBox="0 0 300 220" aria-hidden="true"><use href="#garland"/></svg>
+  <svg class="garland br" viewBox="0 0 300 220" aria-hidden="true"><use href="#garland"/></svg>
+  <div class="band-inner gutter">
+    <div class="eyebrow">Kindly reply</div>
+    <div class="big">RSVP opens with invitations</div>
+    <p class="note">Save the date: June 12, 2027</p>
+  </div>
+</section>
+
+<footer>
+  <div class="inner gutter">
+    <div class="mono">M &amp; E</div>
+    <p>06 · 12 · 2027</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var target = new Date(2027, 5, 12, 0, 0, 0).getTime();
+  var el = { d: document.getElementById('d'), h: document.getElementById('h'), m: document.getElementById('m'), s: document.getElementById('s') };
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var diff = Math.max(0, target - Date.now());
+    var s = Math.floor(diff/1000);
+    el.d.textContent = Math.floor(s/86400);
+    el.h.textContent = pad(Math.floor(s%86400/3600));
+    el.m.textContent = pad(Math.floor(s%3600/60));
+    el.s.textContent = pad(s%60);
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
