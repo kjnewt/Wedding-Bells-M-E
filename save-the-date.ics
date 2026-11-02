@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Miranda and Ethan//Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:miranda-ethan-wedding-20270612@mirandaandethan
+DTSTAMP:20261102T210000Z
+DTSTART;VALUE=DATE:20270612
+DTEND;VALUE=DATE:20270613
+SUMMARY:Miranda & Ethan's Wedding
+LOCATION:Twisted Ranch\, 7345 W Farm to Market Rd 243\, Bertram\, TX 78605
+DESCRIPTION:Save the date! Miranda Newton and Ethan Matmanivong are getting
+  married at Twisted Ranch. Ceremony time to be announced. Formal invitatio
+ n to follow.
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Miranda & Ethan's wedding is one week away
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
