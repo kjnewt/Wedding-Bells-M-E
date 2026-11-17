@@ -151,6 +151,11 @@ footer p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .rsvp-done { text-align: center; align-items: center; gap: 8px; }
 .rsvp-done .big { color: var(--mauve-deep); }
 .rsvp-done .note { color: var(--muted); }
+.deadline { font-size: 12px; letter-spacing: .2em; padding-left: .2em; text-transform: uppercase; font-weight: 600; color: var(--hero-on); margin-top: 4px; }
+.field legend.group { font-family: var(--serif); font-size: 1.25rem; letter-spacing: 0; text-transform: none; font-weight: 500; margin-bottom: 6px; }
+.addr { display: flex; flex-direction: column; gap: 14px; }
+.addr-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .addr-row { grid-template-columns: 1fr 1fr; } .addr-row .field:first-child { grid-column: 1 / -1; } }
 .if-yes { display: flex; flex-direction: column; gap: 18px; }
 .field { display: flex; flex-direction: column; gap: 6px; border: 0; margin: 0; padding: 0; min-width: 0; }
 .field label, .field legend { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--mauve-deep); padding: 0; }
@@ -388,8 +393,8 @@ footer p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
     </div>
     <div class="faq">
       <details><summary>What should I wear?</summary><p>Dress code to be announced. Touches of mauve or gray are always welcome.</p></details>
-      <details><summary>When is the RSVP deadline?</summary><p>Please RSVP using the form at the bottom of this page. The deadline will be shared with formal invitations.</p></details>
-      <details><summary>Can I bring a guest?</summary><p>Please refer to the names on your invitation. We'll note plus-ones there.</p></details>
+      <details><summary>When is the RSVP deadline?</summary><p>Please RSVP by Sunday, January 31, 2027, using the form below.</p></details>
+      <details><summary>Can I bring a guest?</summary><p>Of course! If you'll be bringing a plus one, just include them in your RSVP below so we can save them a seat.</p></details>
       <details><summary>Are children welcome?</summary><p>Of course! There's plenty of room at the ranch for little boots and big smiles. Children are welcomed, loved, and invited to share in this day with us.</p></details>
     </div>
   </section>
@@ -403,6 +408,7 @@ footer p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
     <div class="eyebrow">Kindly reply</div>
     <div class="big">Will you join us?</div>
     <p class="note">Please let us know if you can celebrate with us on June 12, 2027.</p>
+    <p class="deadline">Kindly reply by January 31, 2027</p>
     <form class="rsvp-form" id="rsvp-form" novalidate>
       <div class="field">
         <label for="rsvp-name">Your full name</label>
@@ -412,6 +418,33 @@ footer p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
         <label for="rsvp-email">Email</label>
         <input id="rsvp-email" name="email" type="email" autocomplete="email" required>
       </div>
+      <fieldset class="field">
+        <legend class="group">Mailing address</legend>
+        <div class="addr">
+          <div class="field">
+            <label for="rsvp-address1">Street address</label>
+            <input id="rsvp-address1" name="address1" type="text" autocomplete="address-line1" required>
+          </div>
+          <div class="field">
+            <label for="rsvp-address2">Apartment, suite, etc. <span class="opt">(optional)</span></label>
+            <input id="rsvp-address2" name="address2" type="text" autocomplete="address-line2">
+          </div>
+          <div class="addr-row">
+            <div class="field">
+              <label for="rsvp-city">City</label>
+              <input id="rsvp-city" name="city" type="text" autocomplete="address-level2" required>
+            </div>
+            <div class="field">
+              <label for="rsvp-state">State</label>
+              <input id="rsvp-state" name="state" type="text" autocomplete="address-level1" maxlength="20" required>
+            </div>
+            <div class="field">
+              <label for="rsvp-zip">ZIP</label>
+              <input id="rsvp-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" required>
+            </div>
+          </div>
+        </div>
+      </fieldset>
       <fieldset class="field">
         <legend>Will you attend?</legend>
         <div class="choices">
@@ -495,6 +528,11 @@ footer p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
       [name, email].forEach(function (f) { f.removeAttribute('aria-invalid'); });
       if (!name.value.trim()) { name.setAttribute('aria-invalid', 'true'); msg.textContent = 'Please enter your name.'; name.focus(); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.setAttribute('aria-invalid', 'true'); msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
+      var addr = [['address1', 'street address'], ['city', 'city'], ['state', 'state'], ['zip', 'ZIP code']];
+      for (var i = 0; i < addr.length; i++) {
+        var af = form.elements[addr[i][0]]; af.removeAttribute('aria-invalid');
+        if (!af.value.trim()) { af.setAttribute('aria-invalid', 'true'); msg.textContent = 'Please enter your ' + addr[i][1] + '.'; af.focus(); return; }
+      }
       if (!att) { msg.textContent = 'Please choose whether you will attend.'; return; }
       if (!RSVP_ENDPOINT) { msg.textContent = 'The RSVP form is not connected yet. Please check back soon.'; return; }
       var data = new URLSearchParams(new FormData(form));
